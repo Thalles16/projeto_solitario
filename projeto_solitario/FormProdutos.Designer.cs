@@ -32,7 +32,7 @@
             panel2 = new Panel();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
-            dataGridView1 = new DataGridView();
+            dataGridViewProdutos = new DataGridView();
             lblNome = new Label();
             lblValidade = new Label();
             lblTipo = new Label();
@@ -49,7 +49,7 @@
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewProdutos).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -85,13 +85,13 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
-            // dataGridView1
+            // dataGridViewProdutos
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(391, 38);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(397, 400);
-            dataGridView1.TabIndex = 17;
+            dataGridViewProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewProdutos.Location = new Point(391, 38);
+            dataGridViewProdutos.Name = "dataGridViewProdutos";
+            dataGridViewProdutos.Size = new Size(397, 400);
+            dataGridViewProdutos.TabIndex = 17;
             // 
             // lblNome
             // 
@@ -181,6 +181,7 @@
             btnEditar.TabIndex = 28;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnSalvar
             // 
@@ -190,6 +191,7 @@
             btnSalvar.TabIndex = 29;
             btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.Click += btnSalvar_Click;
             // 
             // btnExcluir
             // 
@@ -199,6 +201,7 @@
             btnExcluir.TabIndex = 30;
             btnExcluir.Text = "Excluir";
             btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // FormProdutos
             // 
@@ -218,7 +221,7 @@
             Controls.Add(lblTipo);
             Controls.Add(lblValidade);
             Controls.Add(lblNome);
-            Controls.Add(dataGridView1);
+            Controls.Add(dataGridViewProdutos);
             Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormProdutos";
@@ -226,7 +229,7 @@
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewProdutos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -236,7 +239,7 @@
         private Panel panel2;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewProdutos;
         private Label lblNome;
         private Label lblValidade;
         private Label lblTipo;
