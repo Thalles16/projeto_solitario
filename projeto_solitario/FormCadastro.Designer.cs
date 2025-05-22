@@ -99,6 +99,7 @@
             btnCadastro.TabIndex = 11;
             btnCadastro.Text = "Cadastrar";
             btnCadastro.UseVisualStyleBackColor = true;
+            btnCadastro.Click += btnCadastro_Click;
             // 
             // txtSenha
             // 

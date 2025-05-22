@@ -16,10 +16,7 @@ namespace projeto_solitario
         public double Preco { get; set; }
         public int Quantidade { get; set; }
         public string Tipo { get; set; }
-        public override string ToString()
-        {
-            return $"{Id} - {Nome} - R$ {Preco} - {Validade} - {Quantidade} unidades";
-        }
+     
         public Produto(int id, string nome, DateOnly validade, double preco, int quantidade, string tipo)
         {
             Id = id;
@@ -69,25 +66,33 @@ namespace projeto_solitario
         {
             List<Produto> produtos = new List<Produto>();
             string sql = "SELECT * FROM produtos";
+
             MySqlCommand comando = new MySqlCommand(sql, conexao.Conectar());
-            MySqlDataReader reader = comando.ExecuteReader();
-            while (reader.Read())
+
+            using (MySqlDataReader reader = comando.ExecuteReader())
             {
-                Produto produto = new Produto(
-     reader.GetInt32(0),
-     reader.GetString(1),
-     DateOnly.FromDateTime(reader.GetDateTime(2)),
-     reader.GetDouble(3),
-     reader.GetInt32(4),
-     reader.GetString(5)); // <- aqui está o tipo
+                while (reader.Read())
+                {
+                    Produto produto = new Produto(
+                        reader.GetInt32(0),
+                        reader.GetString(1),
+                        DateOnly.FromDateTime(reader.GetDateTime(2)),
+                        reader.GetDouble(4),
+                        reader.GetInt32(5),           // quantidade
+                        reader.GetString(3)           // tipo
+                    );
+                    // <- aqui está o tipo
 
 
 
-                produtos.Add(produto);
+                    produtos.Add(produto);
             }
             conexao.Desconectar();
             return produtos;
         }
+        }
+    }
 
     }
-}
+
+

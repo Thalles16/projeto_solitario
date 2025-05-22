@@ -92,6 +92,7 @@
             dataGridViewProdutos.Name = "dataGridViewProdutos";
             dataGridViewProdutos.Size = new Size(397, 400);
             dataGridViewProdutos.TabIndex = 17;
+            dataGridViewProdutos.CellClick += dataGridViewProdutos_CellClick;
             // 
             // lblNome
             // 
@@ -116,7 +117,7 @@
             lblTipo.AutoSize = true;
             lblTipo.Location = new Point(71, 177);
             lblTipo.Name = "lblTipo";
-            lblTipo.Size = new Size(31, 15);
+            lblTipo.Size = new Size(30, 15);
             lblTipo.TabIndex = 20;
             lblTipo.Text = "Tipo";
             // 
@@ -226,6 +227,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormProdutos";
             Text = "FormProdutos";
+            Load += FormProdutos_Load;
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

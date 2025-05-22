@@ -1,3 +1,5 @@
+using MySql.Data.MySqlClient;
+
 namespace projeto_solitario
 {
     public partial class FormLogin : Form
@@ -21,9 +23,31 @@ namespace projeto_solitario
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            FormProdutos formPrincipal = new FormProdutos();
-            formPrincipal.Show();
-            this.Hide();
+            string email = txtEmail.Text;
+            string senha = txtSenha.Text;
+
+            using (MySqlConnection conn = new MySqlConnection("server=localhost;database=projetoCrud;uid=root;pwd=;"))
+            {
+                conn.Open();
+                string query = "SELECT * FROM usuarios WHERE email = @email AND senha = @senha";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@email", email);
+                cmd.Parameters.AddWithValue("@senha", senha);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    MessageBox.Show("Login bem-sucedido!");
+                    new FormProdutos().Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Email ou senha incorretos.");
+                }
+            }
+
         }
     }
 }
+ 
