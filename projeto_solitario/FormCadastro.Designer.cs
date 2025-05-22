@@ -54,8 +54,9 @@
             panel1.Controls.Add(lblEmail);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(800, 450);
+            panel1.Size = new Size(1143, 750);
             panel1.TabIndex = 0;
             // 
             // panel2
@@ -65,8 +66,9 @@
             panel2.Controls.Add(pictureBox1);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
+            panel2.Margin = new Padding(4, 5, 4, 5);
             panel2.Name = "panel2";
-            panel2.Size = new Size(800, 32);
+            panel2.Size = new Size(1143, 53);
             panel2.TabIndex = 15;
             // 
             // pictureBox2
@@ -74,8 +76,9 @@
             pictureBox2.BackColor = SystemColors.ControlLightLight;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(0, 0);
+            pictureBox2.Margin = new Padding(4, 5, 4, 5);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(26, 29);
+            pictureBox2.Size = new Size(37, 48);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 14;
             pictureBox2.TabStop = false;
@@ -84,18 +87,20 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(775, 0);
+            pictureBox1.Location = new Point(1107, 0);
+            pictureBox1.Margin = new Padding(4, 5, 4, 5);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(25, 23);
+            pictureBox1.Size = new Size(36, 38);
             pictureBox1.TabIndex = 13;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
             // btnCadastro
             // 
-            btnCadastro.Location = new Point(298, 326);
+            btnCadastro.Location = new Point(426, 543);
+            btnCadastro.Margin = new Padding(4, 5, 4, 5);
             btnCadastro.Name = "btnCadastro";
-            btnCadastro.Size = new Size(85, 42);
+            btnCadastro.Size = new Size(121, 70);
             btnCadastro.TabIndex = 11;
             btnCadastro.Text = "Cadastrar";
             btnCadastro.UseVisualStyleBackColor = true;
@@ -103,45 +108,51 @@
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(298, 192);
+            txtSenha.Location = new Point(426, 320);
+            txtSenha.Margin = new Padding(4, 5, 4, 5);
             txtSenha.Name = "txtSenha";
-            txtSenha.Size = new Size(260, 23);
+            txtSenha.PasswordChar = '*';
+            txtSenha.Size = new Size(370, 31);
             txtSenha.TabIndex = 10;
             // 
             // lblSenha
             // 
             lblSenha.AutoSize = true;
             lblSenha.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblSenha.Location = new Point(175, 192);
+            lblSenha.Location = new Point(250, 320);
+            lblSenha.Margin = new Padding(4, 0, 4, 0);
             lblSenha.Name = "lblSenha";
-            lblSenha.Size = new Size(65, 21);
+            lblSenha.Size = new Size(96, 32);
             lblSenha.TabIndex = 9;
             lblSenha.Text = "Senha :";
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(298, 113);
+            txtEmail.Location = new Point(426, 188);
+            txtEmail.Margin = new Padding(4, 5, 4, 5);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(260, 23);
+            txtEmail.Size = new Size(370, 31);
             txtEmail.TabIndex = 8;
             // 
             // lblEmail
             // 
             lblEmail.AutoSize = true;
             lblEmail.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblEmail.Location = new Point(175, 113);
+            lblEmail.Location = new Point(250, 188);
+            lblEmail.Margin = new Padding(4, 0, 4, 0);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(61, 21);
+            lblEmail.Size = new Size(90, 32);
             lblEmail.TabIndex = 7;
             lblEmail.Text = "Email :";
             // 
             // FormCadastro
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1143, 750);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 5, 4, 5);
             Name = "FormCadastro";
             Text = "FormCadastro";
             panel1.ResumeLayout(false);
